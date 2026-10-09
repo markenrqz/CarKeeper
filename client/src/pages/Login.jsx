@@ -31,8 +31,8 @@ function Login() {
     try {
       await login(formData.email, formData.password);
 
-      // Successful login takes the user to My Garage
-      navigate("/garage");
+      // Successful login takes the user to Dashboard
+      navigate("/dashboard");
     } catch (error) {
       setError(error.response?.data?.message || "Unable to log in");
     }
