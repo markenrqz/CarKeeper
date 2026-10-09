@@ -80,12 +80,23 @@ const vehicleSchema = new mongoose.Schema(
     shareToken: {
       type: String,
       default: null,
-      unique: true,
-      sparse: true,
     },
   },
   {
     timestamps: true,
+  }
+);
+
+// Only enforce uniqueness for vehicles with an actual sharing token.
+// Vehicles with a null or missing token can coexist because
+// public sharing is disabled for those vehicles.
+vehicleSchema.index(
+  { shareToken: 1 },
+  {
+    unique: true,
+    partialFilterExpression: {
+      shareToken: { $type: "string" },
+    },
   }
 );
 
