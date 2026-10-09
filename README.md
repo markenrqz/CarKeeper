@@ -153,14 +153,6 @@ The diagrams below were produced for the capstone and are available both as prev
 
 The five user-flow diagrams cover login/registration, main navigation, vehicle management, service history and public sharing. Project planning was tracked in Trello and is documented in the capstone report.
 
-### Architecture overview
-
-![CarKeeper system architecture](docs/images/system-architecture.png)
-
-### Database design
-
-![CarKeeper database schema](docs/images/database-schema.png)
-
 ## Security and privacy
 
 - Passwords are hashed rather than stored in plain text.
